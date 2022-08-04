@@ -3,7 +3,7 @@
 import time
 
 print_debug = True
-print_debug_level = 2
+print_debug_level = 5
 
 song_name = ""
 

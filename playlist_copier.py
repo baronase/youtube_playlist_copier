@@ -12,7 +12,9 @@ from selenium.webdriver.common.action_chains import ActionChains
 from copier_utils import *
 
 debug_num_refreshes = 0
-liked_playlist = "https://www.youtube.com/watch?v=LLyXx7Zmxkg&list=LL_nSEY2566oz2KCsyURIMhQ&index=424"
+# playlist link. add index (e.g. `&index=424`) at the end to start from somewhere in the middle
+liked_playlist = "https://www.youtube.com/watch?v=LLyXx7Zmxkg&list=LL_nSEY2566oz2KCsyURIMhQ"
+liked_playlist = "https://www.youtube.com/playlist?list=LL_nSEY2566oz2KCsyURIMhQ"
 copy_to_playlist_name = "one_two"
 
 
@@ -93,6 +95,7 @@ def save_to_playlist(driver, actions):
     selenium_actionchain_escape(actions)
     debug_print("closed", song_name, 3)
 
+
 print("hey, Starting the program")
 
 debug_print("Configuring options", 5)
@@ -100,8 +103,9 @@ debug_print("Configuring options", 5)
 chrome_options = Options()
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 #Change chrome driver path accordingly
-chrome_driver = r"c:\Users\porata1\Downloads\chromedriver.exe"
-driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
+chrome_driver = r"C:\Users\asaf\Downloads\Software\chromedriver_win32\chromedriver.exe"
+# driver = webdriver.Chrome(chrome_driver, options=chrome_options)
+driver = webdriver.Chrome(chrome_driver)
 
 debug_print ("web page title: " + driver.title, 3)
 
